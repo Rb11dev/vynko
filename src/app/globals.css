@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 247 246 252; --surface: 255 255 255; --raised: 240 238 250; --line: 226 223 242;
+  --ink: 24 20 48; --muted: 108 102 138;
+  --brand: 109 74 255; --accent: 255 92 138; --danger: 232 64 64; --ok: 28 176 110;
+  color-scheme: light;
+}
+.dark {
+  --bg: 11 10 21; --surface: 20 18 36; --raised: 30 27 52; --line: 46 42 78;
+  --ink: 240 238 255; --muted: 152 146 188;
+  --brand: 138 110 255; --accent: 255 112 150; --danger: 248 90 90; --ok: 52 205 135;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body { @apply bg-bg text-ink antialiased; font-feature-settings: 'cv11', 'ss01'; }
+::selection { background: rgb(var(--brand) / 0.28); }
+* { scrollbar-width: thin; scrollbar-color: rgb(var(--line)) transparent; }
+:focus-visible { outline: 2px solid rgb(var(--brand)); outline-offset: 2px; border-radius: 8px; }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.safe-top { padding-top: env(safe-area-inset-top); }
+.grad-text { @apply bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent; }
+.dvh { height: 100vh; height: 100dvh; }
+@media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation: none !important; transition: none !important; } }

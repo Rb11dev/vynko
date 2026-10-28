@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+.env
+.env.*
+!.env.example
+data/*.db
+data/*.db-wal
+data/*.db-shm
+*.log
+.DS_Store
+tsconfig.tsbuildinfo
+
+# Local backup files
+*.before-security-upgrade
